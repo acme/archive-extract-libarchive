@@ -1,0 +1,14 @@
+# common
+Build
+MANIFEST.bak
+MYMETA.json
+MYMETA.yml
+_build
+blib
+inc
+
+# this dist
+*.o
+*.c
+Archive-Extract-Libarchive-*
+t/extracted/
