@@ -3,7 +3,7 @@ NAME
     (using libarchive)
 
 SYNOPSIS
-      use Archive::Extract::Libararchive;
+      use Archive::Extract::Libarchive;
 
       # build an Archive::Extract object
       my $ae = Archive::Extract::Libarchive->new( archive => 'foo.tgz' );

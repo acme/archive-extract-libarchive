@@ -36,7 +36,7 @@ Archive::Extract::Libarchive - A generic archive extracting mechanism (using lib
 
 =head1 SYNOPSIS
 
-  use Archive::Extract::Libararchive;
+  use Archive::Extract::Libarchive;
 
   # build an Archive::Extract object
   my $ae = Archive::Extract::Libarchive->new( archive => 'foo.tgz' );

@@ -1,4 +1,7 @@
 Revision history for Perl module Archive::Extract::Libarchive:
 
+0.36
+     - fix code in synopsis (patch by Gisle Aas)
+
 0.35 Sat Oct 22 13:35:19 BST 2011
      - initial release
