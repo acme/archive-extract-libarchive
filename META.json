@@ -34,7 +34,7 @@
    "provides" : {
       "Archive::Extract::Libarchive" : {
          "file" : "lib/Archive/Extract/Libarchive.pm",
-         "version" : "0.35"
+         "version" : "0.36"
       }
    },
    "release_status" : "stable",
@@ -44,5 +44,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.35"
+   "version" : "0.36"
 }

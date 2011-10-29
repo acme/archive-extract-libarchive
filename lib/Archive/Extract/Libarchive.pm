@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use Cwd qw(cwd);
 use Object::Tiny qw{ archive extract_path files error };
-our $VERSION = '0.35';
+our $VERSION = '0.36';
 
 require XSLoader;
 XSLoader::load( 'Archive::Extract::Libarchive', $VERSION );
