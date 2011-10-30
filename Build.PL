@@ -28,7 +28,12 @@ my $build = Module::Build->new(
     },
     module_name    => 'Archive::Extract::Libarchive',
     needs_compiler => 1,
-    requires       => { 'Object::Tiny' => 0, 'Test::More' => 0 },
-    sign           => 1,
+    requires       => {
+        'File::Slurp'  => 0,
+        'Object::Tiny' => 0,
+        'Path::Class'  => 0,
+        'Test::More'   => 0,
+    },
+    sign => 1,
 );
 $build->create_build_script;

@@ -2,6 +2,8 @@
 use strict;
 use warnings;
 use File::Path;
+use File::Slurp;
+use Path::Class;
 use Test::More;
 use_ok 'Archive::Extract::Libarchive';
 
@@ -14,9 +16,9 @@ test_archive('t/archive.zip');
 test_archive('t/archive.tgz');
 test_archive('t/archive.tar.bz2');
 
-my $ae = Archive::Extract::Libarchive->new( archive => 'Build.PL' );
-is( $ae->extract, 0, 'Can not extract Build.PL' );
-like( $ae->error, qr/Unrecognized archive format/, "Have error" );
+my $ae_build = Archive::Extract::Libarchive->new( archive => 'Build.PL' );
+is( $ae_build->extract, 0, 'Can not extract Build.PL' );
+like( $ae_build->error, qr/Unrecognized archive format/, "Have error" );
 
 done_testing();
 
@@ -30,19 +32,10 @@ sub test_archive {
     is( $ae->error, undef, "Do not have error" );
     is_deeply( [ sort @{ $ae->files } ],
         \@filenames, "Can read files inside $filename" );
-    return;
-    is( $ae->file('archive/README'), 'This is in the root directory.
-
-It is a file.
-', "Can read archive/README inside $filename"
-    );
     my %files;
-    $ae->iterate(
-        sub {
-            my ( $filename, $contents ) = @_;
-            $files{$filename} = $contents;
-        }
-    );
+    foreach my $filename (@filenames) {
+        $files{$filename} = read_file( file( $extracted, $filename ) );
+    }
     is_deeply(
         \%files,
         {   'archive/a/b/B' => 'And this is inside a *and* inside b.
