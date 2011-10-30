@@ -16,11 +16,13 @@ name: Archive-Extract-Libarchive
 provides:
   Archive::Extract::Libarchive:
     file: lib/Archive/Extract/Libarchive.pm
-    version: 0.36
+    version: 0.37
 requires:
+  File::Slurp: 0
   Object::Tiny: 0
+  Path::Class: 0
   Test::More: 0
 resources:
   homepage: http://search.cpan.org/dist/Archive-Extract-Libarchive/
   license: http://dev.perl.org/licenses/
-version: 0.36
+version: 0.37
