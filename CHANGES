@@ -1,5 +1,8 @@
 Revision history for Perl module Archive::Extract::Libarchive:
 
+0.38
+     - set extract_path (noticed by blue)
+
 0.37 Sun Oct 30 09:01:50 GMT 2011
      - expand the test suite
 

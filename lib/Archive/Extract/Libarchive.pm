@@ -23,6 +23,7 @@ sub extract {
         return 0;
     }
 
+    $self->{extract_path} = $extract_path;
     return 1;
 }
 

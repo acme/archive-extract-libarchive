@@ -29,6 +29,7 @@ sub test_archive {
 
     rmtree($extracted) if -d $extracted;
     is( $ae->extract( to => $extracted ), 1, "Can extract $filename" );
+    is( $ae->extract_path, $extracted, "extract_path set" );
     is( $ae->error, undef, "Do not have error" );
     is_deeply( [ sort @{ $ae->files } ],
         \@filenames, "Can read files inside $filename" );
